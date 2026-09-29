@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dT"
+version = "0.1.0"
+description = "Typed computational DAG for composing heterogeneous ML models (PyTorch, CatBoost, XGBoost, sklearn)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "torch",
+    "scikit-learn",
+    "catboost",
+    "xgboost",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["dt*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
